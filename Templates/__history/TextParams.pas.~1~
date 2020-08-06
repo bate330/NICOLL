@@ -1,0 +1,18 @@
+unit uFieldTypes;
+
+interface
+
+uses
+    System.Generics.Collections;
+
+type
+  TTObjectType = class
+    private
+
+    public
+
+  end;
+
+implementation
+
+end.

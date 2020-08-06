@@ -1,0 +1,107 @@
+unit Unit3;
+
+interface
+
+uses
+  System.Generics.Collections, Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, GraphParams, BarcodeParams, TextParams;
+
+type
+  TTemplate = class(TForm)
+    Graph: TGraph;
+    Barcode: TBarcode;
+    Text: TText;
+    ListView1: TListView;
+    Label1: TLabel;
+    DeleteAllButton: TButton;
+    FieldTypeComboBox: TComboBox;
+    DeleteButton: TButton;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Template: TTemplate;
+
+
+ type
+  { Declare a new object type }
+  TNewObject = class
+  private
+    FName: String;
+
+  public
+    constructor Create(const AName: String);
+    destructor Destroy(); override;
+  end;
+
+implementation
+
+{$R *.dfm}
+
+constructor TNewObject.Create(const AName: String);
+begin
+  FName := AName;
+end;
+
+destructor TNewObject.Destroy;
+begin
+  MessageDlg('Object "' + FName + '" was destroyed!', mtInformation, [mbOK], 0);
+  inherited;
+end;
+
+procedure TTemplate.Button1Click(Sender: TObject);
+var
+  TextObject: TObjectList<TText>;
+  BarcodeObject: TObjectLIst<TBarcode>;
+  GraphObject: TObjectList<TGraph>;
+  Obj: TText;
+  i: integer;
+begin
+      if FieldTypeComboBox.Text='Text' then begin
+
+
+
+
+      end;
+
+      if FieldTypeComboBox.Text='Barcode' then begin
+
+
+
+      end;
+
+      if FieldTypeComboBox.Text='Graphics' then begin
+
+
+
+      end;
+   end;
+ { List := TObjectList<TText>.Create();
+  List.OwnsObjects := true;
+  List.Add(Text);
+  List.Add(TNewObject.Create('Two'));
+  Obj := TNewObject.Create('Three');
+  List.Delete(0);
+  List.Extract(Obj);
+  List.Free;      }
+
+
+ { //ObjectType.Add();
+ // Itm:=ListView1.Items.Add;
+ // Itm.Caption:=(FieldTypeComboBox.Text);
+end; }
+
+procedure TTemplate.FormCreate(Sender: TObject);
+begin
+  Graph := TGraph.Create;
+  Barcode := TBarcode.Create;
+  Text := TText.Create;
+end;
+
+end.

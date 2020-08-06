@@ -1,0 +1,18 @@
+program Project4;
+
+uses
+  Vcl.Forms,
+  Unit3 in 'Unit3.pas' {Template},
+  BarcodeParams in 'Templates\BarcodeParams.pas',
+  GraphParams in 'Templates\GraphParams.pas',
+  TextParams in 'Templates\TextParams.pas',
+  _uFieldTypes in 'Templates\_uFieldTypes.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TTemplate, Template);
+  Application.Run;
+end.

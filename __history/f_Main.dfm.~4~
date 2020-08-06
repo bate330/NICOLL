@@ -1,0 +1,108 @@
+object Template: TTemplate
+  Left = 0
+  Top = 0
+  Caption = 'Template'
+  ClientHeight = 152
+  ClientWidth = 591
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 31
+    Top = 38
+    Width = 48
+    Height = 13
+    Caption = 'New field:'
+  end
+  object Label2: TLabel
+    Left = 31
+    Top = 8
+    Width = 87
+    Height = 13
+    Caption = 'Number of Fields: '
+  end
+  object IFieldList: TListView
+    Left = 25
+    Top = 64
+    Width = 480
+    Height = 25
+    Columns = <>
+    HideSelection = False
+    TabOrder = 0
+    OnDblClick = IFieldListDblClick
+    OnSelectItem = IFieldListSelectItem
+  end
+  object DeleteAllButton: TButton
+    Left = 430
+    Top = 95
+    Width = 75
+    Height = 25
+    Caption = 'Delete All'
+    TabOrder = 1
+    OnClick = DeleteAllButtonClick
+  end
+  object FieldTypeComboBox: TComboBox
+    Left = 124
+    Top = 37
+    Width = 145
+    Height = 21
+    Enabled = False
+    ItemIndex = 0
+    TabOrder = 2
+    Text = 'Text'
+    Items.Strings = (
+      'Text'
+      'Barcode'
+      'Graphics')
+  end
+  object DeleteButton: TButton
+    Left = 349
+    Top = 95
+    Width = 75
+    Height = 25
+    Caption = 'Delete'
+    Enabled = False
+    TabOrder = 3
+    OnClick = DeleteButtonClick
+  end
+  object AddButton: TButton
+    Left = 275
+    Top = 33
+    Width = 75
+    Height = 25
+    Caption = 'Add'
+    Enabled = False
+    TabOrder = 4
+    OnClick = AddButtonClick
+  end
+  object IFieldNumber: TComboBox
+    Left = 124
+    Top = 10
+    Width = 145
+    Height = 21
+    TabOrder = 5
+    Text = '0'
+    Items.Strings = (
+      '1'
+      '2'
+      '3'
+      '4'
+      '5'
+      '6')
+  end
+  object OKButton: TButton
+    Left = 275
+    Top = 6
+    Width = 75
+    Height = 25
+    Caption = 'OK'
+    TabOrder = 6
+    OnClick = OKButtonClick
+  end
+end

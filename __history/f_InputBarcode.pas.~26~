@@ -1,0 +1,73 @@
+unit f_InputBarcode;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TInputBarcode = class(TForm)
+    ContentEdit: TEdit;
+    OKButton: TButton;
+    HeightEdit: TEdit;
+    BarcodeTypeEdit: TEdit;
+    FoldXEdit: TEdit;
+    FoldYEdit: TEdit;
+    CorrectionEdit: TEdit;
+    SpecialEdit: TEdit;
+    TextNameEdit: TEdit;
+    SpaceFrontEdit: TEdit;
+    SpaceBackEdit: TEdit;
+    SignatureEdit: TEdit;
+    SignatureDistanceEdit: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    InversionEdit: TComboBox;
+    procedure OKButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  InputBarcode: TInputBarcode;
+
+implementation uses f_Main;
+
+{$R *.dfm}
+
+procedure TInputBarcode.OKButtonClick(Sender: TObject);
+begin
+  Template.TBarcodes[Template.IFieldNumber].Content:=ContentEdit.Text;
+  Template.TBarcodes[Template.IFieldNumber].Height:=strtoint(HeightEdit.Text);
+  Template.TBarcodes[Template.IFieldNumber].BarcodeType:=BarcodeTypeEdit.Text;
+  Template.TBarcodes[Template.IFieldNumber].FoldX:=strtoint(FoldXEdit.Text);
+  Template.TBarcodes[Template.IFieldNumber].FoldY:=strtoint(FoldYEdit.Text);
+  Template.TBarcodes[Template.IFieldNumber].Correction:=strtoint(CorrectionEdit.Text);
+  Template.TBarcodes[Template.IFieldNumber].Special:=SpecialEdit.Text;
+  Template.TBarcodes[Template.IFieldNumber].TextName:=TextNameEdit.Text;
+  Template.TBarcodes[Template.IFieldNumber].SpaceFront:=strtoint(SpaceFrontEdit.Text);
+  Template.TBarcodes[Template.IFieldNumber].SpaceBack:=strtoint(SpaceBackEdit.Text);
+  Template.TBarcodes[Template.IFieldNumber].Signature:=strtoint(SignatureEdit.Text);
+  Template.TBarcodes[Template.IFieldNumber].SignatureDistance:=strtoint(SignatureDistanceEdit.Text);
+
+  if InversionEdit.ItemIndex=0 then
+    Template.TBarcodes[Template.IFieldNumber].Inversion:=false
+    else
+    Template.TBarcodes[Template.IFieldNumber].Inversion:=true;
+end;
+
+end.

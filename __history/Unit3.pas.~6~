@@ -1,0 +1,126 @@
+﻿unit Unit3;
+
+interface
+
+uses
+  System.SysUtils, Contnrs, System.Generics.Collections, Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, GraphParams, BarcodeParams, TextParams;
+
+type
+  TTemplate = class(TForm)
+    ListView1: TListView;
+    Label1: TLabel;
+    DeleteAllButton: TButton;
+    FieldTypeComboBox: TComboBox;
+    DeleteButton: TButton;
+    Button1: TButton;
+    Label2: TLabel;
+    FieldNumber: TComboBox;
+    OKButton: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure OKButtonClick(Sender: TObject);
+  private
+    TextNumber: integer;
+    GraphNumber: integer;
+    BarcodeNumber: integer;
+    list: TObjectlist;
+  public
+    { Public declarations }
+  end;
+
+var
+  Template: TTemplate;
+
+
+ type
+  { Declare a new object type }
+  TNewObject = class
+  private
+    FName: String;
+
+  public
+    constructor Create(const AName: String);
+    destructor Destroy(); override;
+  end;
+
+implementation
+
+{$R *.dfm}
+
+constructor TNewObject.Create(const AName: String);
+begin
+  FName := AName;
+end;
+
+destructor TNewObject.Destroy;
+begin
+  MessageDlg('Object "' + FName + '" was destroyed!', mtInformation, [mbOK], 0);
+  inherited;
+end;
+
+procedure TTemplate.Button1Click(Sender: TObject);
+var
+  TextObject: TObjectList<TText>;
+  BarcodeObject: TObjectLIst<TBarcode>;
+  GraphObject: TObjectList<TGraph>;
+begin
+      if FieldTypeComboBox.Text='Text' then begin
+        TextNumber := TextNumber+1;
+
+      end;
+
+      if FieldTypeComboBox.Text='Barcode' then begin
+        BarcodeNumber := BarcodeNumber+1;
+
+      end;
+
+      if FieldTypeComboBox.Text='Graphics' then begin
+        GraphNumber := GraphNumber+1;
+
+      end;
+end;
+ { List := TObjectList<TText>.Create();
+  List.OwnsObjects := true;
+  List.Add(Text);
+  List.Add(TNewObject.Create('Two'));
+  Obj := TNewObject.Create('Three');
+  List.Delete(0);
+  List.Extract(Obj);
+  List.Free;      }
+
+ { //ObjectType.Add();
+ // Itm:=ListView1.Items.Add;
+ // Itm.Caption:=(FieldTypeComboBox.Text);
+end; }
+
+procedure TTemplate.FormCreate(Sender: TObject);
+var
+    Graph: TGraph;
+    Text: TText;
+    Barcode: TBarcode;
+begin
+  Graph := TGraph.Create;
+  Barcode := TBarcode.Create;
+  Text := TText.Create;
+  TextNumber:=0;
+  GraphNumber:=0;
+  BarcodeNumber:=0;
+end;
+
+procedure TTemplate.OKButtonClick(Sender: TObject);
+var
+i: integer;
+NumberOfFields: integer;
+
+begin
+  NumberOfFields := FieldNumber.ToString;
+  for i := 0 to NumberOfFields-1 do
+  begin
+
+  end;
+
+  FieldNumber.Enabled := false;
+end;
+
+end.

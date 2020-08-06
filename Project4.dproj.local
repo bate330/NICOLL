@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/07/30 11:21:20.000.868,=D:\Moje dokumenty\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2020/07/30 11:25:36.000.046,D:\Moje dokumenty\Embarcadero\Studio\Projects\Unit3.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit3.pas</Transaction>
+    <Transaction>2020/07/30 11:25:36.000.046,D:\Moje dokumenty\Embarcadero\Studio\Projects\Unit3.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit3.dfm</Transaction>
+    <Transaction>2020/07/30 11:27:38.000.355,=D:\Moje dokumenty\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/07/30 11:33:08.000.000,D:\Moje dokumenty\Embarcadero\Studio\Projects\Unit1.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\uFieldTypes.pas</Transaction>
+    <Transaction>2020/07/30 11:39:53.000.013,D:\Moje dokumenty\Embarcadero\Studio\Projects\Project4.dproj=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Project4.dproj</Transaction>
+    <Transaction>2020/07/30 11:44:48.000.463,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\_uFieldTypes.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\uFieldTypes.pas</Transaction>
+    <Transaction>2020/07/30 11:45:23.000.845,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\_uFieldTypes.pas=</Transaction>
+    <Transaction>2020/07/30 12:31:35.000.642,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.pas</Transaction>
+    <Transaction>2020/07/30 15:13:05.000.284,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\BarcodeParams.pas</Transaction>
+    <Transaction>2020/07/30 15:13:05.000.292,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\GraphParams.pas</Transaction>
+    <Transaction>2020/07/30 15:13:05.000.295,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\_uFieldTypes.pas</Transaction>
+    <Transaction>2020/07/30 15:13:05.000.295,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\TextParams.pas</Transaction>
+    <Transaction>2020/07/30 15:13:07.000.415,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\__history</Transaction>
+    <Transaction>2020/07/30 15:13:11.000.633,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\__recovery</Transaction>
+    <Transaction>2020/07/30 15:59:28.000.169,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Templates\_uFieldTypes.pas=</Transaction>
+    <Transaction>2020/08/03 13:23:41.000.475,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.pas</Transaction>
+    <Transaction>2020/08/03 13:27:04.000.850,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Main.pas</Transaction>
+    <Transaction>2020/08/03 13:27:04.000.850,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Main.dfm</Transaction>
+    <Transaction>2020/08/03 13:27:23.000.863,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Main.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Params.pas</Transaction>
+    <Transaction>2020/08/03 13:27:23.000.863,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Main.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Params.dfm</Transaction>
+    <Transaction>2020/08/03 13:27:30.000.135,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit3.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Main.dfm</Transaction>
+    <Transaction>2020/08/03 13:27:30.000.135,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit3.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Main.pas</Transaction>
+    <Transaction>2020/08/03 13:37:59.000.485,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Params.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputText.pas</Transaction>
+    <Transaction>2020/08/03 13:37:59.000.485,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_Params.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputText.dfm</Transaction>
+    <Transaction>2020/08/03 14:19:44.000.312,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit2.pas</Transaction>
+    <Transaction>2020/08/03 14:19:53.000.920,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit2.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputGraph.dfm</Transaction>
+    <Transaction>2020/08/03 14:19:53.000.920,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit2.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputGraph.pas</Transaction>
+    <Transaction>2020/08/03 14:20:01.000.297,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit3.pas</Transaction>
+    <Transaction>2020/08/03 14:20:11.000.189,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit3.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputBarcode.pas</Transaction>
+    <Transaction>2020/08/03 14:20:11.000.189,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit3.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputBarcode.dfm</Transaction>
+    <Transaction>2020/08/03 14:26:17.000.094,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputText.pas=</Transaction>
+    <Transaction>2020/08/03 14:27:17.000.799,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.pas</Transaction>
+    <Transaction>2020/08/03 14:30:11.000.270,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputText.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.dfm</Transaction>
+    <Transaction>2020/08/03 14:30:11.000.270,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputText.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.pas</Transaction>
+    <Transaction>2020/08/03 14:31:16.000.245,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.pas</Transaction>
+    <Transaction>2020/08/03 14:31:49.000.341,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputBarcode.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.dfm</Transaction>
+    <Transaction>2020/08/03 14:31:49.000.341,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputBarcode.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit1.pas</Transaction>
+    <Transaction>2020/08/03 14:34:39.000.822,=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit2.pas</Transaction>
+    <Transaction>2020/08/03 14:35:08.000.814,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputGraph.dfm=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit2.dfm</Transaction>
+    <Transaction>2020/08/03 14:35:08.000.814,D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\f_InputGraph.pas=D:\Moje dokumenty\Embarcadero\Studio\Projects\NICOLL\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>

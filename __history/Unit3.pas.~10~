@@ -1,0 +1,115 @@
+unit Unit3;
+
+interface
+
+uses
+  System.SysUtils, Contnrs, System.Generics.Collections, Winapi.Windows, Winapi.Messages, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, GraphParams, BarcodeParams, TextParams;
+
+type
+  TTemplate = class(TForm)
+    ListView1: TListView;
+    Label1: TLabel;
+    DeleteAllButton: TButton;
+    FieldTypeComboBox: TComboBox;
+    DeleteButton: TButton;
+    AddButton: TButton;
+    Label2: TLabel;
+    FieldNumber: TComboBox;
+    OKButton: TButton;
+    procedure AddButtonClick(Sender: TObject);
+    procedure OKButtonClick(Sender: TObject);
+    procedure DeleteAllButtonClick(Sender: TObject);
+    procedure DeleteButtonClick(Sender: TObject);
+  private
+    NumberOfFields: integer;
+    TFields: array of TObject;
+    AddButtonsClicks: integer;
+    procedure IsArrayFull;
+  public
+    { Public declarations }
+  end;
+
+var
+  Template: TTemplate;
+
+ type
+  { Declare a new object type }
+  TNewObject = class
+  private
+    FName: String;
+  end;
+
+implementation
+
+{$R *.dfm}
+
+procedure TTemplate.DeleteAllButtonClick(Sender: TObject);
+begin
+  TFields:= nil;
+  NumberOfFields:=0;
+  AddButtonsClicks:=0;
+  ListView1.Items.Clear;
+  FieldNumber.Enabled := true;
+  OKButton.Enabled := true;
+end;
+
+procedure TTemplate.DeleteButtonClick(Sender: TObject);
+begin
+  ListView1.Selected.Destroy;
+  if AddButton.Enabled=false then
+    FieldNumber.Text := (strtoint(FieldNumber.Text)-1).tostring;
+  if strtoint(FieldNumber.Text)=0 then
+  begin
+    TFields:= nil;
+    NumberOfFields:=0;
+    AddButtonsClicks:=0;
+    ListView1.Items.Clear;
+    FieldNumber.Enabled := true;
+    OKButton.Enabled := true;
+  end;
+
+end;
+
+procedure TTemplate.IsArrayFull;
+begin
+  if AddButtonsClicks=NumberOfFields then begin
+    AddButton.Enabled := false;
+    FieldTypeComboBox.Enabled := false;
+  end;
+end;
+
+procedure TTemplate.AddButtonClick(Sender: TObject);
+var
+  Itm: TListItem;
+begin
+  AddButtonsClicks := AddButtonsClicks+1;
+  if FieldTypeComboBox.Text='Text' then begin
+    TFields[AddButtonsClicks] := TText.Create;
+  end;
+
+  if FieldTypeComboBox.Text='Barcode' then begin
+    TFields[AddButtonsClicks] := TBarcode.Create;
+  end;
+
+  if FieldTypeComboBox.Text='Graphics' then begin
+    TFields[AddButtonsClicks] := TGraph.Create;
+  end;
+  IsArrayFull;
+  Itm:=ListView1.Items.Add;
+  Itm.Caption:=(FieldTypeComboBox.Text);
+end;
+
+procedure TTemplate.OKButtonClick(Sender: TObject);
+var
+i: integer;
+begin
+  NumberOfFields := strtoint(FieldNumber.Text);
+  SetLength(TFields, NumberOfFields);
+  FieldNumber.Enabled := false;
+  OKButton.Enabled := false;
+  FieldTypeComboBox.Enabled := true;
+  AddButton.Enabled := true;
+end;
+
+end.

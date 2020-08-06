@@ -1,0 +1,23 @@
+program Project4;
+
+uses
+  Vcl.Forms,
+  f_Main in 'f_Main.pas' {Template},
+  BarcodeParams in 'Templates\BarcodeParams.pas',
+  GraphParams in 'Templates\GraphParams.pas',
+  TextParams in 'Templates\TextParams.pas',
+  f_InputText in 'f_InputText.pas' {Form1},
+  f_InputGraph in 'f_InputGraph.pas' {Form2},
+  f_InputBarcode in 'f_InputBarcode.pas' {Form3};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TTemplate, Template);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TForm3, Form3);
+  Application.Run;
+end.

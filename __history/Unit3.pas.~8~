@@ -1,0 +1,104 @@
+﻿unit Unit3;
+
+interface
+
+uses
+  System.SysUtils, Contnrs, System.Generics.Collections, Winapi.Windows, Winapi.Messages, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, GraphParams, BarcodeParams, TextParams;
+
+type
+  TTemplate = class(TForm)
+    ListView1: TListView;
+    Label1: TLabel;
+    DeleteAllButton: TButton;
+    FieldTypeComboBox: TComboBox;
+    DeleteButton: TButton;
+    AddButton: TButton;
+    Label2: TLabel;
+    FieldNumber: TComboBox;
+    OKButton: TButton;
+    procedure AddButtonClick(Sender: TObject);
+    procedure OKButtonClick(Sender: TObject);
+  private
+    NumberOfFields: integer;
+    TFields: array of TObject;
+  public
+    { Public declarations }
+  end;
+
+var
+  Template: TTemplate;
+
+
+ type
+  { Declare a new object type }
+  TNewObject = class
+  private
+    FName: String;
+
+  public
+    constructor Create(const AName: String);
+    destructor Destroy(); override;
+  end;
+
+implementation
+
+{$R *.dfm}
+
+constructor TNewObject.Create(const AName: String);
+begin
+  FName := AName;
+end;
+
+destructor TNewObject.Destroy;
+begin
+  MessageDlg('Object "' + FName + '" was destroyed!', mtInformation, [mbOK], 0);
+  inherited;
+end;
+
+procedure TTemplate.AddButtonClick(Sender: TObject);
+var
+i: integer;
+begin
+i:=i+1;
+
+      if FieldTypeComboBox.Text='Text' then begin
+         TFields[i] := TText.Create;
+         showmessage(i.ToString);
+      end;
+
+      if FieldTypeComboBox.Text='Barcode' then begin
+         TFields[i] := TBarcode.Create;
+      end;
+
+      if FieldTypeComboBox.Text='Graphics' then begin
+         TFields[i] := TGraph.Create;
+      end;
+end;
+ { List := TObjectList<TText>.Create();
+  List.OwnsObjects := true;
+  List.Add(Text);
+  List.Add(TNewObject.Create('Two'));
+  Obj := TNewObject.Create('Three');
+  List.Delete(0);
+  List.Extract(Obj);
+  List.Free;      }
+
+ { //ObjectType.Add();
+ // Itm:=ListView1.Items.Add;
+ // Itm.Caption:=(FieldTypeComboBox.Text);
+end; }
+
+procedure TTemplate.OKButtonClick(Sender: TObject);
+var
+i: integer;
+begin
+  NumberOfFields := strtoint(FieldNumber.Text);
+  SetLength(TFields, NumberOfFields);
+  FieldNumber.Enabled := false;
+  OKButton.Enabled := false;
+  FieldTypeComboBox.Enabled := true;
+  AddButton.Enabled := true;
+end;
+
+end.

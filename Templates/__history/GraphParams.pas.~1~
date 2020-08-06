@@ -1,0 +1,128 @@
+unit GraphParams;
+
+interface
+
+uses
+    System.Generics.Collections;
+
+type
+  TBarcodeParam = class
+    private
+    FContent: string;
+    FHeight: integer;
+    FBarcodeType: string;
+    FFoldX: integer;
+    FFoldY: integer;
+    FCorrection: integer;
+    FSpecial: string;
+    FSpaceBack: integer;
+    FSpaceFront: integer;
+    FTextName: string;
+    FInversion: boolean;
+    FSignature: integer;
+    FSignatureDistance: integer;
+    procedure SetContent(const Value: string);
+    procedure SetHeight(const Value: integer);
+    procedure SetBarcodeType(const Value: string);
+    procedure SetFoldX(const Value: integer);
+    procedure SetFoldY(const Value: integer);
+    procedure SetCorrection(const Value: integer);
+    procedure SetSpecial(const Value: string);
+    procedure SetSpaceBack(const Value: integer);
+    procedure SetSpaceFront(const Value: integer);
+    procedure SetTextName(const Value: string);
+    procedure SetInversion(const Value: boolean);
+    procedure SetSignature(const Value: integer);
+    procedure SetSignatureDisantce(const Value: integer);
+
+
+    public
+      property Content: string read FContent write SetContent;
+      property Height: integer read FHeight write SetHeight;
+      property BarcodeType: string read FBarcodeType write SetBarcodeType;
+      property FoldX: integer read FFoldX write SetFoldX;
+      property FoldY: integer read FFoldY write SetFoldY;
+      property Correction: integer read FCorrection write SetCorrection;
+      property Special: string read FSpecial write SetSpecial;
+      property TextName: string read FTextName write SetTextName;
+      property SpaceFront: integer read FSpaceFront write SetSpaceFront;
+      property SpaceBack: integer read FSpaceBack write SetSpaceBack;
+      property Signature: integer read FSignature write SetSignature;
+      property Inversion: boolean read FInversion write SetInversion;
+      property SignatureDistance: integer read FSignatureDistance write SetSignatureDisantce;
+  end;
+
+  TBArcodeTypes = TObjectList<TBarcodeParam>;
+implementation
+
+{ TTObjectType }
+
+
+{ TTextParam }
+
+procedure TBarcodeParam.SetBarcodeType(const Value: string);
+begin
+  FBarcodeType := Value;
+end;
+
+procedure TBarcodeParam.SetContent(const Value: string);
+begin
+  FContent := Value;
+end;
+
+procedure TBarcodeParam.SetCorrection(const Value: integer);
+begin
+  FCorrection := Value;
+end;
+
+procedure TBarcodeParam.SetFoldX(const Value: integer);
+begin
+  FFoldX := Value;
+end;
+
+procedure TBarcodeParam.SetFoldY(const Value: integer);
+begin
+  FFoldY := Value;
+end;
+
+procedure TBarcodeParam.SetHeight(const Value: integer);
+begin
+  FHeight := Value;
+end;
+
+procedure TBarcodeParam.SetInversion(const Value: boolean);
+begin
+  FInversion := Value;
+end;
+
+procedure TBarcodeParam.SetSignature(const Value: integer);
+begin
+  FSignature := Value;
+end;
+
+procedure TBarcodeParam.SetSignatureDisantce(const Value: integer);
+begin
+  FSignatureDistance := Value;
+end;
+
+procedure TBarcodeParam.SetSpaceBack(const Value: integer);
+begin
+  FSpaceBack := Value;
+end;
+
+procedure TBarcodeParam.SetSpaceFront(const Value: integer);
+begin
+  FSpaceFront := Value;
+end;
+
+procedure TBarcodeParam.SetSpecial(const Value: string);
+begin
+  FSpecial := Value;
+end;
+
+procedure TBarcodeParam.SetTextName(const Value: string);
+begin
+  FTextName := Value;
+end;
+
+end.

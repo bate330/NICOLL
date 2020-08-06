@@ -1,0 +1,131 @@
+unit f_Main;
+
+interface
+
+uses
+  System.SysUtils, Contnrs, System.Generics.Collections, Winapi.Windows, Winapi.Messages, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, GraphParams, BarcodeParams, TextParams, f_InputText, f_InputGraph, f_InputBarcode;
+
+type
+  TTemplate = class(TForm)
+    IFieldList: TListView;
+    Label1: TLabel;
+    DeleteAllButton: TButton;
+    FieldTypeComboBox: TComboBox;
+    AddButton: TButton;
+    Label2: TLabel;
+    OKButton: TButton;
+    xFieldNumber: TComboBox;
+    procedure AddButtonClick(Sender: TObject);
+    procedure OKButtonClick(Sender: TObject);
+    procedure DeleteAllButtonClick(Sender: TObject);
+    procedure IFieldListDblClick(Sender: TObject);
+  private
+    NumberOfFields: integer;
+    CreateNewField: integer;
+    procedure IsArrayFull;
+    procedure ClearingMethod;
+  public
+    IFieldNumber:integer;
+    TTexts: array of TText;
+    TBarcodes: array of TBarcode;
+    TGraphs: array of TGraph;
+    TypeOfField: array of integer;
+  end;
+
+var
+  Template: TTemplate;
+
+ type
+  { Declare a new object type }
+  TNewObject = class
+  private
+
+  end;
+
+implementation
+
+{$R *.dfm}
+
+procedure TTemplate.ClearingMethod;
+begin
+  TypeOfField:=nil;
+  NumberOfFields:=0;
+  CreateNewField:=0;
+  IFieldNumber:=0;
+  IFieldList.Items.Clear;
+  xFieldNumber.Enabled := true;
+  OKButton.Enabled := true;
+  FieldTypeComboBox.Enabled := false;
+  AddButton.Enabled := false;
+end;
+
+procedure TTemplate.DeleteAllButtonClick(Sender: TObject);
+begin
+  ClearingMethod;
+end;
+
+procedure TTemplate.IsArrayFull;
+begin
+  if CreateNewField=NumberOfFields then begin
+    AddButton.Enabled := false;
+    FieldTypeComboBox.Enabled := false;
+  end;
+end;
+
+procedure TTemplate.IFieldListDblClick(Sender: TObject);
+begin
+  IFieldNumber:=IFieldList.Selected.Index+1;
+
+  if TypeOfField[IFieldNumber]=0 then begin
+    InputText.Show;
+  end;
+
+  if TypeOfField[IFieldNumber]=1 then begin
+    InputBarcode.Show;
+  end;
+
+  if TypeOfField[IFieldNumber]=2 then begin
+    InputGraph.Show;
+  end;
+end;
+
+procedure TTemplate.AddButtonClick(Sender: TObject);
+var
+  IField: TListItem;
+begin
+  CreateNewField := CreateNewField+1;
+  if FieldTypeComboBox.Text='Text' then begin
+    TTexts[CreateNewField] := TText.Create;
+    TypeOfField[CreateNewField]:=0;
+  end;
+
+  if FieldTypeComboBox.Text='Barcode' then begin
+    TBarcodes[CreateNewField] := TBarcode.Create;
+    TypeOfField[CreateNewField]:=1;
+  end;
+
+  if FieldTypeComboBox.Text='Graphics' then begin
+    TGraphs[CreateNewField] := TGraph.Create;
+    TypeOfField[CreateNewField]:=2;
+  end;
+
+  IsArrayFull;
+  IField:=IFieldList.Items.Add;
+  IField.Caption:=(FieldTypeComboBox.Text);
+end;
+
+procedure TTemplate.OKButtonClick(Sender: TObject);
+begin
+  NumberOfFields := strtoint(xFieldNumber.Text);
+  SetLength(TBarcodes, NumberOfFields);
+  SetLength(TTexts, NumberOfFields);
+  SetLength(TGraphs, NumberOfFields);
+  SetLength(TypeOfField, NumberOfFields);
+  xFieldNumber.Enabled := false;
+  OKButton.Enabled := false;
+  FieldTypeComboBox.Enabled := true;
+  AddButton.Enabled := true;
+end;
+
+end.

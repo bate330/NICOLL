@@ -1,0 +1,50 @@
+﻿unit BarcodeParams;
+
+interface
+
+uses
+    System.Generics.Collections;
+
+type
+  TTextParam = class
+    private
+    FContent: string;
+    FHeight: integer;
+    FBarcodeType: string;
+    procedure SetContent(const Value: string);
+    procedure SetHeight(const Value: integer);
+    procedure SetBarcodeType(const Value: string);
+
+
+    public
+      property Content: string read FContent write SetContent;
+      property Height: integer read FHeight write SetHeight;
+      property BarcodeType: string read FBarcodeType write SetBarcodeType;
+
+
+  end;
+
+  TTextParams = TObjectList<TTextParam>;
+implementation
+
+{ TTObjectType }
+
+
+{ TTextParam }
+
+procedure TTextParam.SetBarcodeType(const Value: string);
+begin
+  FBarcodeType := Value;
+end;
+
+procedure TTextParam.SetContent(const Value: string);
+begin
+  FContent := Value;
+end;
+
+procedure TTextParam.SetHeight(const Value: integer);
+begin
+  FHeight := Value;
+end;
+
+end.

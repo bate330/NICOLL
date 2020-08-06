@@ -1,0 +1,93 @@
+unit uFieldTypes;
+
+interface
+
+uses
+    System.Generics.Collections;
+
+type
+  TTextParam = class
+    private
+    FFont: string;
+    FSize: integer;
+    FContent: string;
+    FSpecial: string;
+    FSpaceFront: integer;
+    FSpaceBack: integer;
+    FDistance: integer;
+    FBoldface: string;
+    FRotation: string;
+    procedure SetFont(const Value: integer);
+    procedure SetSize(const Value: integer);
+    procedure SetContent(const Value: string);
+    procedure SetSpecial(const Value: integer);
+    procedure SetSpaceFront(const Value: integer);
+    procedure SetSpaceBack(const Value: integer);
+    procedure SetDistance(const Value: integer);
+    procedure SetBoldface(const Value: string);
+    procedure SetRotation(const Value: string);
+
+    public
+       property Font: string read FFont write SetFont;
+       property Size: integer read FSize write SetSize;
+       property Content: string read FContent write SetContent;
+       property Special: string read FSpecial write SetSpecial;
+       property SpaceFront: integer read FSpaceFront write SetSpaceFront;
+       property SpaceBack: integer read FSpaceBack write SetSpaceBack;
+       property Distance: integer read FDistance write SetDistance;
+       property Boldface: string read FBoldface write SetBoldface;
+       property Rotation: string read FRotation write SetRotation;
+
+  end;
+
+  TTextParams = TObjectList<TTextParam>;
+implementation
+
+{ TTextParam }
+
+procedure TTextParam.SetBoldface(const Value: string);
+begin
+  FBoldface := Value;
+end;
+
+procedure TTextParam.SetContent(const Value: string);
+begin
+  FContent := Value;
+end;
+
+procedure TTextParam.SetDistance(const Value: integer);
+begin
+  FDistance := Value;
+end;
+
+procedure TTextParam.SetFont(const Value: string);
+begin
+  FFont := Value;
+end;
+
+procedure TTextParam.SetRotation(const Value: string);
+begin
+  FRotation := Value;
+end;
+
+procedure TTextParam.SetSize(const Value: integer);
+begin
+  FSize := Value;
+end;
+
+procedure TTextParam.SetSpaceBack(const Value: integer);
+begin
+  FSpaceBack := Value;
+end;
+
+procedure TTextParam.SetSpaceFront(const Value: integer);
+begin
+  FSpaceFront := Value;
+end;
+
+procedure TTextParam.SetSpecial(const Value: string);
+begin
+  FSpecial := Value;
+end;
+
+end.
